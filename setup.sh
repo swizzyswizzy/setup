@@ -3,15 +3,16 @@
 #TODO
 #- add parameters (--ssh, --i3, --upgrade, etc.)
 #- errors logging
-
+#- split sections into seperate files (file for packages, file for ssh, etc)
 # if "--option or -all"
 
 
 
 # Variables and directories:
-
 SSH_KEY=~/.ssh/marekzytko_key
 
+# List of packages:
+packages=("git" "i3-wm" "neovim" "curl" "gimp")
 
 
 #						DETERMINING PACKAGE MANAGER
@@ -44,8 +45,6 @@ done
 
 #						INSTALLING PACKAGES
 # ----------------------------------------------------------------------------------------------
-# List of packages:
-packages=("git" "i3-wm" "neovim" "curl")
 
 # Install packages list:
 for package in ${packages[@]};
