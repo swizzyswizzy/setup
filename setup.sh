@@ -12,7 +12,14 @@
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "i3-wm" "neovim" "curl" "gimp")
+packages=("git" "i3-wm" "neovim" "curl" "gimp" "chromium-browser" "keepass2" "tmux")
+
+
+if [ "$EUID" -eq 0 ]
+then echo "Please run as a normal user."
+  exit
+fi
+
 
 
 #						DETERMINING PACKAGE MANAGER
@@ -54,6 +61,9 @@ do
 	if [ $? -eq 0 ];
 	then
 		echo -e "\e[42mSUCCESS\e[0m"
+	else
+		echo -e "\e[41mFAILED\e[0m"
+		exit
 	fi
 done
 	
@@ -96,8 +106,9 @@ ssh-add $SSH_KEY > /dev/null
 echo -e "\e[42mSUCCESS\e[0m"
 
 # ----------------------------------------------------------------------------------------------
-#
-#
-#
-#
-#
+
+
+echo -e "\e[42mSETUP SUCCESSFULL !\e[0m"
+
+
+
