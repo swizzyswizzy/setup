@@ -3,14 +3,22 @@
 #TODO
 #- add parameters (--ssh, --i3, --upgrade, etc.)
 #- errors logging
-
+#- split sections into seperate files (file for packages, file for ssh, etc)
 # if "--option or -all"
 
 
 
 # Variables and directories:
-
 SSH_KEY=~/.ssh/marekzytko_key
+
+# List of packages:
+packages=("git" "i3-wm" "neovim" "curl" "gimp" "chromium-browser" "keepass2" "tmux")
+
+
+if [ "$EUID" -eq 0 ]
+then echo "Please run as a normal user."
+  exit
+fi
 
 
 
@@ -44,8 +52,6 @@ done
 
 #						INSTALLING PACKAGES
 # ----------------------------------------------------------------------------------------------
-# List of packages:
-packages=("git" "i3-wm" "neovim" "curl")
 
 # Install packages list:
 for package in ${packages[@]};
@@ -55,6 +61,9 @@ do
 	if [ $? -eq 0 ];
 	then
 		echo -e "\e[42mSUCCESS\e[0m"
+	else
+		echo -e "\e[41mFAILED\e[0m"
+		exit
 	fi
 done
 	
@@ -97,8 +106,9 @@ ssh-add $SSH_KEY > /dev/null
 echo -e "\e[42mSUCCESS\e[0m"
 
 # ----------------------------------------------------------------------------------------------
-#
-#
-#
-#
-#
+
+
+echo -e "\e[42mSETUP SUCCESSFULL !\e[0m"
+
+
+
