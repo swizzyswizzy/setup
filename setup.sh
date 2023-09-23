@@ -4,15 +4,13 @@
 #- add parameters (--ssh, --i3, --upgrade, etc.)
 #- errors logging
 
-
+# if "--option or -all"
 
 
 
 # Variables and directories:
-DOT_SSH=~/.ssh
-SSH_KEY_NAME=marekzytko_key
 
-
+SSH_KEY=~/.ssh/marekzytko_key
 
 
 
@@ -53,7 +51,7 @@ packages=("git" "i3-wm" "neovim" "curl")
 for package in ${packages[@]};
 do
 	echo -n "Installing ${package}..."
-	${PACKAGE_MANAGER} ${package} > /dev/null
+	sudo ${PACKAGE_MANAGER} ${package} > /dev/null
 	if [ $? -eq 0 ];
 	then
 		echo -e "\e[42mSUCCESS\e[0m"
@@ -79,39 +77,28 @@ done
 #						SSH SETUP
 # ----------------------------------------------------------------------------------------------
 # Setup ssh-agent and generate ssh key
-eval $(ssh-agent)
+echo -n "starting SSH agent..." 
+eval $(ssh-agent) > /dev/null
 
+if [ $? -eq 0 ];
+then
+	echo -e "\e[42mSUCCESS\e[0m"
+fi
+
+
+echo -n "generating SSH key..."
 # https://stackoverflow.com/questions/43235179/how-to-execute-ssh-keygen-without-prompt
-ssh-keygen -q -t rsa -N '' -f $DOT_SSH/$SSH_KEY_NAME <<<y >/dev/null 2>&1
-ssh-add $DOT_SSH/$SSH_KEY_NAME 
+ssh-keygen -q -t rsa -N '' -f $SSH_KEY<<<y >/dev/null
+echo -e "\e[42mSUCCESS\e[0m"
+
+
+echo -n "adding SSH key to agent..."
+ssh-add $SSH_KEY > /dev/null
+echo -e "\e[42mSUCCESS\e[0m"
+
 # ----------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-#						WINDOWS MANAGER INSTALL (i3)
-# ----------------------------------------------------------------------------------------------
-# Install windows manager
-apt install i3-wm -y
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#
+#
+#
+#
+#
