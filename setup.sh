@@ -12,7 +12,7 @@
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "i3-wm" "neovim" "curl" "gimp" "chromium-browser" "keepass2" "tmux")
+packages=("git" "i3-wm" "neovim" "curl" "gimp" "chromium-browser" "keepass2" "tmux" "zsh" "sl" "ripgrep")
 
 
 if [ "$EUID" -eq 0 ]
@@ -54,6 +54,7 @@ done
 # ----------------------------------------------------------------------------------------------
 source dotfiles.sh
 source mega.sh
+source zsh.sh
 # ----------------------------------------------------------------------------------------------
 
 

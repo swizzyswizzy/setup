@@ -9,6 +9,13 @@
 # layout, use the i3-config-wizard
 #
 
+
+
+bindsym Mod1+Return exec i3-sensible-terminal -e zsh 
+
+
+
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -54,7 +61,6 @@ floating_modifier Mod1
 # #####                   bindsym Mod1+Return exec i3-sensible-terminal -e tmux
 
 
-bindsym Mod1+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -69,7 +75,7 @@ bindsym Mod1+d exec --no-startup-id dmenu_run
 
 
 # Launchers
-bindsym Mod1+b exec firefox
+bindsym Mod1+b exec chromium
 bindsym Mod1+Shift+b exec gimp
 
 #Background wallpaper
