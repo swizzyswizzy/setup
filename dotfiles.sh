@@ -1,7 +1,10 @@
 #!/bin/bash
-echo -ne "Copying configuration files..."
-cp ./dotfiles/wallpaper.jpg ~/.config/i3/
-cp ./dotfiles/config ~/.config/i3/
+
+echo "copying files from CONFIG_FILES to repository..."
+cp -r ~/CONFIG_FILES/* ~/setup/dotfiles
+
+echo "copying dotfiles (.config directory) from repository to ~/.config/ directory:"
+cp -r ./dotfiles/* ~/.config
+
+
 echo -e "\e[42mSUCCESS\e[0m"
-
-
