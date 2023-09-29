@@ -1,22 +1,15 @@
 #!/bin/bash
 
-#TODO
-#- add parameters (--ssh, --i3, --upgrade, etc.)
-#- errors logging
-#- split sections into seperate files (file for packages, file for ssh, etc)
-# if "--option or -all"
-
-
 
 # Variables and directories:
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "i3-wm" "neovim" "curl" "gimp" "chromium-browser" "keepass2" "tmux" "zsh" "sl" "ripgrep")
+packages=("git" "i3" "neovim" "curl" "gimp" "chromium" "keepass" "tmux" "zsh" "sl" "ripgrep" "rofi")
 
 
 if [ "$EUID" -eq 0 ]
-then echo "Please run as a normal user."
+then echo "Please run as a normal user and input passwords manually each time (because I can't script properely :))))" 
   exit
 fi
 
@@ -32,6 +25,7 @@ osInfo[/etc/debian_version]="apt-get install -y"
 osInfo[/etc/alpine-release]="apk --update add"
 osInfo[/etc/centos-release]="yum install -y"
 osInfo[/etc/fedora-release]="dnf install -y"
+osInfo[/etc/arch-release]="pacman -Syy"
 
 for f in ${!osInfo[@]};
 do
@@ -60,9 +54,6 @@ source zsh.sh
 
 
 
-
-
-
 #						INSTALLING PACKAGES
 # ----------------------------------------------------------------------------------------------
 
@@ -76,17 +67,10 @@ do
 		echo -e "\e[42mSUCCESS\e[0m"
 	else
 		echo -e "\e[41mFAILED\e[0m"
-		exit
+		${package}
+		
 	fi
 done
-	
-
-#update & upgrade
-#TODO Add different package managers for updating and upgrading distro
-#
-#apt update -y 
-#apt upgrade -y&
-#
 # ----------------------------------------------------------------------------------------------
 
 
@@ -119,10 +103,4 @@ ssh-add $SSH_KEY > /dev/null
 echo -e "\e[42mSUCCESS\e[0m"
 
 # ----------------------------------------------------------------------------------------------
-
-
-
-echo -e "\e[42mSETUP SUCCESSFULL !\e[0m"
-
-
 
