@@ -1,0 +1,17 @@
+
+# Auto backup for .config files (every hour):
+
+
+0 * * * * cp -r ~/.config/i3 ~/repo/setup/dotfiles
+0 * * * * cp -r ~/.config/i3status ~/repo/setup/dotfiles
+0 * * * * cp -r ~/.config/htop ~/repo/setup/dotfiles
+0 * * * * cp -r ~/.config/nvim ~/repo/setup/dotfiles
+0 * * * * cp -r ~/.config/rofi ~/repo/setup/dotfiles
+0 * * * * cp -r ~/.config/emacs_conf ~/repo/setup/dotfiles
+
+
+
+
+# Backup cron itself:
+
+0 * * * * fcrontab -l > ~/repo/setup/dotfiles/crontab.crontab
