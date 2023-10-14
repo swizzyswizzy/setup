@@ -1,0 +1,4 @@
+[key_layout]
+command=~/.config/i3block_scripts/keyboard_layout
+label=Layout
+interval=30

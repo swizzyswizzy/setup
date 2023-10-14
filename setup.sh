@@ -5,7 +5,7 @@
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "i3" "neovim" "curl" "gimp" "chromium" "keepass" "tmux" "zsh" "sl" "ripgrep" "rofi")
+packages=("git" "i3" "neovim" "curl" "gimp" "chromium" "keepass" "tmux" "zsh" "sl" "ripgrep" "rofi" "tldr")
 
 
 if [ "$EUID" -eq 0 ]

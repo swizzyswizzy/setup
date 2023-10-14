@@ -7,6 +7,12 @@
 ;; what variables specify), the help system can provide.
 
 ;; Add the NonGNU ELPA package archive
+
+
+
+;; Load configuration file
+;; (load-file "~/.emacs.d/init.el")
+
 (require 'package)
 (add-to-list 'package-archives  '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 (unless package-archive-contents  (package-refresh-contents))
@@ -43,8 +49,7 @@
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
-;; Bind the `magit-status' command to a convenient key.
-(global-set-key (kbd "C-c g") #'magit-status)
+
 
 ;;; NASM Support
 (unless (package-installed-p 'nasm-mode)
@@ -124,7 +129,66 @@
   (ivy-mode 1))
 
 (use-package counsel)
+(use-package rainbow-delimiters
+         :hook (prog-mode . rainbow-delimiters-mode))
 
+;; Enable line numbers for some modes
+(dolist (mode '(text-mode-hook
+                prog-mode-hook
+                conf-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 1))))
+
+;; ---------------------------------------------------------------------------------
+;; BINDINGS
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Bind the `magit-status' command to a convenient key.
+(global-set-key (kbd "C-c g") #'magit-status)
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
+
+;; ORG-MODE 
+(global-set-key (kbd "<f12>") 'org-agenda)
+
+
+;; Standard key bindings
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; ---------------------------------------------------------------------------------
+
+;;;
+;;; Org Mode
+;;;
+(add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp"))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(require 'org)
+
+;; Set up package.el to work with MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
+
+
+(defun code-compile ()
+  (interactive)
+  (unless (file-exists-p "Makefile")
+    (set (make-local-variable 'compile-command)
+     (let ((file (file-name-nondirectory buffer-file-name)))
+       (format "%s -o %s %s"
+           (if  (equal (file-name-extension file) "cpp") "g++" "gcc" )
+           (file-name-sans-extension file)
+           file)))
+    (compile compile-command)))
+
+(global-set-key [f9] 'code-compile)
+
+(setq org-directory "~/Documents/org-mode-emacs")
+(setq org-agenda-files (list "inbox.org"))
+
+
+

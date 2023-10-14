@@ -24,6 +24,7 @@ order += "disk /"
 order += "memory"
 order += "volume master"
 order += "tztime local"
+order += "bar"
 
 path_exists VPN {
         # path exists when a VPN tunnel launched
@@ -35,10 +36,10 @@ path_exists VPN {
 	min_width = 200
 }
 wireless _first_ {
-        format_up = "Wireless: (Signal Quality: %quality, SSID: %essid) %ip"
+        format_up = "Wireless: (Signal Quality: %quality) %ip"
 	format_down = "Wireless: DOWN"
 	separator_block_width = 30
-	min_width = 745
+	min_width = 545
 	align = "center"
 }
 
@@ -76,12 +77,6 @@ memory {
 	separator_block_width = 30
 }
 
-tztime local {
-        format = "%H:%M:%S  %Y-%m-%d "
-	min_width = 350
-	align = "right"
-}
-
 volume master {
         format = "♪: %volume  "
         format_muted = "♪: muted (%volume)"
@@ -91,3 +86,11 @@ volume master {
 	min_width = 100
         mixer_idx = 0
 }
+
+
+tztime local {
+        format = "%H:%M:%S  %Y-%m-%d "
+	min_width = 270
+	align = "right"
+}
+
