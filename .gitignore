@@ -1,1 +1,2 @@
 *.deb
+dotfiles/nvim/plugin
