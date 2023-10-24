@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Variables and directories:
 SSH_KEY=~/.ssh/marekzytko_key
 
