@@ -84,7 +84,11 @@ bindsym Mod1+d exec "rofi -modi drun,run -show drun"
 
 
 # Launchers
-bindsym Mod1+b exec chromium
+
+# Commented out due to collision with Tmux prefix chortcut (alt+b) which has been changed due to collision with Vim (ctrl-b) which is used to scroll window
+# bindsym Mod1+b exec chromium 
+
+
 bindsym Mod1+Shift+s exec flameshot gui
 bindsym Control+Mod1+l exec betterlockscreen -l dimblur
 #bindsym Control+Mod1+l exec "i3lock -i ~/.config/i3/wallpaper.jpg"

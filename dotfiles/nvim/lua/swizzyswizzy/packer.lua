@@ -20,5 +20,8 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use('folke/neodev.nvim')
+  use('ryanoasis/vim-devicons')
 end);
 

@@ -13,7 +13,7 @@
 */20 * * * * cp -r ~/.config/betterlockscreen ~/git/setup/dotfiles
 */20 * * * * cp -r ~/.zshrc ~/git/setup/dotfiles
 */20 * * * * cp -r ~/.tmux.conf ~/git/setup/dotfiles
-*/20 * * * * cp -r ~/.tmux ~/git/setup/dotfiles
+# */20 * * * * cp -r ~/.tmux ~/git/setup/dotfiles
 
 # Backup cron itself:
 
