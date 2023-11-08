@@ -13,7 +13,7 @@
 # Assign Workspaces:
 assign [class="Spotify"] $ws3
 
-bindsym Mod1+Return exec i3-sensible-terminal -e zsh 
+bindsym Mod1+Return exec alacritty
 
 default_border pixel 2
 default_floating_border pixel 2
