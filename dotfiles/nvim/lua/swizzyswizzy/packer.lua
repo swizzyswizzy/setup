@@ -23,5 +23,6 @@ return require('packer').startup(function(use)
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use('folke/neodev.nvim')
   use('ryanoasis/vim-devicons')
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end);
 
