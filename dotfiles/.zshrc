@@ -107,4 +107,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias config="cd ~/.config"
-alias leetcode="cd ~/git/cpp_learning/leetcode"
+# alias leetcode="cd ~/git/cpp_learning/leetcode"
+
+alias kurierApp="cd /opt/lampp/htdocs/kurierAppTest"
+alias starwae-frontend="cd ~/git/starwae-frontend"
+alias starwae-backend="cd ~/git/starwae-backend"
