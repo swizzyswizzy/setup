@@ -8,7 +8,7 @@
 */20 * * * * cp -r ~/.config/i3block_scripts ~/git/setup/dotfiles
 
 */20 * * * * cp -r ~/.config/htop ~/git/setup/dotfiles
-*/20 * * * * cp -r ~/.config/nvim ~/git/setup/dotfiles
+*/20 * * * * cp -r ~/.vimrc ~/git/setup/dotfiles
 */20 * * * * cp -r ~/.config/rofi ~/git/setup/dotfiles
 */20 * * * * cp -r ~/.config/betterlockscreen ~/git/setup/dotfiles
 */20 * * * * cp -r ~/.zshrc ~/git/setup/dotfiles

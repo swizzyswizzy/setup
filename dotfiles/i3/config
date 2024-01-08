@@ -11,6 +11,7 @@
 
 
 # Assign Workspaces:
+assign [class="Sokoban"] $ws3
 assign [class="Spotify"] $ws3
 
 bindsym Mod1+Return exec alacritty

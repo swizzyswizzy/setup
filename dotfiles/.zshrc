@@ -112,3 +112,5 @@ alias config="cd ~/.config"
 alias kurierApp="cd /opt/lampp/htdocs/kurierAppTest"
 alias starwae-frontend="cd ~/git/starwae-frontend"
 alias starwae-backend="cd ~/git/starwae-backend"
+
+source ~/vulkan_sdk/1.3.268.0/setup-env.sh
