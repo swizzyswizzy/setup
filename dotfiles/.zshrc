@@ -114,3 +114,6 @@ alias starwae-frontend="cd ~/git/starwae-frontend"
 alias starwae-backend="cd ~/git/starwae-backend"
 
 source ~/vulkan_sdk/1.3.268.0/setup-env.sh
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
