@@ -109,9 +109,8 @@ source $ZSH/oh-my-zsh.sh
 alias config="cd ~/.config"
 # alias leetcode="cd ~/git/cpp_learning/leetcode"
 
-alias kurierApp="cd /opt/lampp/htdocs/kurierAppTest"
-alias starwae-frontend="cd ~/git/starwae-frontend"
-alias starwae-backend="cd ~/git/starwae-backend"
+alias os="cd ~/git/testOS/"
+alias firma="cd ~/Documents/firma"
 
 source ~/vulkan_sdk/1.3.268.0/setup-env.sh
 export PYENV_ROOT="$HOME/.pyenv"
