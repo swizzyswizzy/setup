@@ -111,6 +111,8 @@ alias config="cd ~/.config"
 
 alias os="cd ~/git/testOS/"
 alias firma="cd ~/Documents/firma"
+alias update="sudo pacman -Syu"
+
 
 source ~/vulkan_sdk/1.3.268.0/setup-env.sh
 export PYENV_ROOT="$HOME/.pyenv"
