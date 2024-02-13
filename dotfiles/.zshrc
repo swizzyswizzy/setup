@@ -107,14 +107,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias config="cd ~/.config"
-# alias leetcode="cd ~/git/cpp_learning/leetcode"
 
 alias os="cd ~/git/testOS/"
 alias firma="cd ~/Documents/firma"
 alias update="sudo pacman -Syu"
+alias wifi_restart="sudo systemctl restart iwd.service" 
+alias htb="cd ~/Documents/HackTheBox" 
+alias htbvpn_connect="sudo openvpn --daemon --config /home/marek/Documents/HackTheBox/starting_point_1swizzyswizzy1.ovpn" 
+alias htbvpn_disconnect="sudo pkill openvpn"
 
 
 source ~/vulkan_sdk/1.3.268.0/setup-env.sh
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"

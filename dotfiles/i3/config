@@ -11,9 +11,6 @@
 
 
 # Assign Workspaces:
-assign [class="Sokoban"] $ws3
-assign [class="Spotify"] $ws3
-
 bindsym Mod1+Return exec alacritty
 
 default_border pixel 2
@@ -260,4 +257,4 @@ exec "xautolock -detectsleep -time 1 -locker \"betterlockscreen -l dimblur\""
 #exec "xautolock -detectsleep -time 3 -locker \"i3lock -i ~/.config/i3/wallpaper.jpg\""
 
 exec "playerctld daemon"
-
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
