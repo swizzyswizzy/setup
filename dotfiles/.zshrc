@@ -115,6 +115,7 @@ alias wifi_restart="sudo systemctl restart iwd.service"
 alias htb="cd ~/Documents/HackTheBox" 
 alias htbvpn_connect="sudo openvpn --daemon --config /home/marek/Documents/HackTheBox/starting_point_1swizzyswizzy1.ovpn" 
 alias htbvpn_disconnect="sudo pkill openvpn"
+alias wifi_settings="nmtui"
 
 
 source ~/vulkan_sdk/1.3.268.0/setup-env.sh
