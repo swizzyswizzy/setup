@@ -1,8 +1,6 @@
 # Installing Oh-my-zsh terminal
 
-echo -ne "Installing oh-my-zsh..."
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"<<<y >/dev/null
+yay oh-my-zsh-git
 
 echo -e "\e[42mSUCCESS\e[0m"
 
