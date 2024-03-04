@@ -6,6 +6,7 @@ SSH_KEY=~/.ssh/marekzytko_key
 # List of packages:
 packages=("git" "gimp" "keepass" "tmux" "zsh" "zsh-completions" "ripgrep" "rofi" "tldr" "falkon" "fcron" "openvpn" "alacritty" "btop" "flameshot")
 
+yay_packages=("mirage" "corefm")
 
 if [ "$EUID" -eq 0 ]
 then echo "Please run as a normal user and input passwords manually each time (because I can't script properely :))))" 
@@ -26,7 +27,23 @@ source zsh.sh
 for package in ${packages[@]};
 do
 	echo -n "Installing ${package}..."
-	sudo pacman -Syy ${package} > /dev/null
+	sudo pacman -Syy ${package} --noconfirm > /dev/null
+	if [ $? -eq 0 ];
+	then
+		echo -e "\e[42mSUCCESS\e[0m"
+	else
+		echo -e "\e[41mFAILED\e[0m"
+		${package}
+		
+	fi
+done
+
+
+# Install packages list:
+for package in ${yay_packages[@]};
+do
+	echo -n "Installing ${package}..."
+	yay ${package} --noconfirm > /dev/null
 	if [ $? -eq 0 ];
 	then
 		echo -e "\e[42mSUCCESS\e[0m"
