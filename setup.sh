@@ -20,6 +20,7 @@ source dotfiles.sh
 source mega.sh
 source zsh.sh
 source yay.sh
+source zsh.sh
 
 
 
