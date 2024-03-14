@@ -4,9 +4,9 @@
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "gimp" "keepass" "tmux" "zsh" "zsh-completions" "ripgrep" "rofi" "tldr" "falkon" "fcron" "openvpn" "alacritty" "btop" "flameshot" "powertop" "picom" "xautolock" "playerctl" "dex")
+packages=("git" "gimp" "keepass" "tmux" "zsh" "zsh-completions" "ripgrep" "rofi" "tldr" "falkon" "fcron" "openvpn" "alacritty" "btop" "flameshot" "powertop" "picom" "xautolock" "playerctl" "dex" "veracrypt" "libinput" "brightnessctl" "ffmpeg")
 
-yay_packages=("mirage" "corefm" "oh-my-zsh-git" "betterlockscreen")
+yay_packages=("mirage" "corefm" "oh-my-zsh-git" "betterlockscreen" "opera")
 
 if [ "$EUID" -eq 0 ]
 then echo "Please run as a normal user and input passwords manually each time (because I can't script properely :))))" 
