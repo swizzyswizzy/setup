@@ -84,5 +84,7 @@ echo -e "\e[42mSUCCESS\e[0m"
 
 git config --global core.editor vim
 
+# Set crontab
 
+sudo fcrontab dotfiles/crontab.crontab
 
