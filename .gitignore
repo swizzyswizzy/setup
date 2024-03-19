@@ -1,2 +1,3 @@
 *.deb
 dotfiles/nvim/plugin
+yay/
