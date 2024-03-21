@@ -81,10 +81,10 @@ echo -e "\e[42mSUCCESS\e[0m"
 
 
 # Additional configuration commands:
-
+echo -n "setting vim as a global git editor..."
 git config --global core.editor vim
 
 # Set crontab
-
+echo -n "installing crontab..."
 sudo fcrontab dotfiles/crontab.crontab
 
