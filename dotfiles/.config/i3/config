@@ -54,6 +54,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous 
 bindsym XF86AudioNext exec --no-startup-id playerctl next
+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 #-----------------------------------------------------------------------------------
 
 # use these keys for focus, movement, and resize directions when reaching for
@@ -253,7 +256,7 @@ bar {
 
 exec flameshot
 exec megasync
-exec "xautolock -detectsleep -time 1 -locker \"betterlockscreen -l dimblur\""
+exec "xautolock -detectsleep -time 10 -locker \"betterlockscreen -l dimblur\""
 #exec "xautolock -detectsleep -time 3 -locker \"i3lock -i ~/.config/i3/wallpaper.jpg\""
 
 exec "playerctld daemon"

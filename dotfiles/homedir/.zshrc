@@ -110,12 +110,14 @@ alias config="cd ~/.config"
 
 alias os="cd ~/git/testOS/"
 alias firma="cd ~/Documents/firma"
-alias update="sudo pacman -Syu --noconfirm"
+alias update="yay --noconfirm"
 alias wifi_restart="sudo systemctl restart iwd.service" 
 alias htb="cd ~/Documents/HackTheBox" 
 alias htbvpn_connect="sudo openvpn --daemon --config /home/marek/Documents/HackTheBox/starting_point_1swizzyswizzy1.ovpn" 
 alias htbvpn_disconnect="sudo pkill openvpn"
 alias wifi_settings="nmtui"
-
+alias POWER_ULTRA_LOW="sudo cpupower frequency-set -u 2GHz && powerprofilesctl set power-saver"
+alias POWER_NORMAL="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set power-saver"
+alias POWER_MAX="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set performance"
 
 export PYENV_ROOT="$HOME/.pyenv"

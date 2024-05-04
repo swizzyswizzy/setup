@@ -36,15 +36,15 @@ path_exists VPN {
 	min_width = 200
 }
 wireless _first_ {
-        format_up = "Wireless: (Signal Quality: %quality) %ip"
+        format_up = "Wireless: (Signal: %quality) %ip"
 	format_down = "Wireless: DOWN"
 	separator_block_width = 30
-	min_width = 545
+	min_width = 345
 	align = "center"
 }
 
 ethernet _first_ {
-        format_up = "Ethernet: %ip (%speed)"
+        format_up = "Ethernet: (%speed) %ip"
         format_down = "Ethernet: DOWN"
 	separator_block_width = 30
 	align = "center"
@@ -54,8 +54,8 @@ ethernet _first_ {
 battery all {
         format = "%status %percentage %remaining (%emptytime %consumption)"
 	format_down = "- No battery -"
-	status_chr = "⚡Charging ⚡"
-	status_full = "Battery full."
+	status_chr = "🔋"
+	status_full = "Full"
 	separator_block_width = 30
 	min_width = 200
 	align = "center"
@@ -71,7 +71,7 @@ disk "/" {
 memory {
         format = "RAM: %used/%total used"
         threshold_degraded = "2G"
-        format_degraded = "MEMORY < %available"
+        format_degraded = "RAM: %used/%total used"
 	min_width = 200
 	align = "center"
 	separator_block_width = 30
