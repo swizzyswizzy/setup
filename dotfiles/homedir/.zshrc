@@ -120,6 +120,7 @@ alias wifi_settings="nmtui"
 alias POWER_ULTRA_LOW="sudo cpupower frequency-set -u 2GHz && powerprofilesctl set power-saver"
 alias POWER_NORMAL="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set power-saver"
 alias POWER_MAX="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set performance"
+alias nc="ncat"
 
 export PYENV_ROOT="$HOME/.pyenv"
 # Install Ruby Gems to ~/gems
