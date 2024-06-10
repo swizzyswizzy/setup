@@ -122,3 +122,6 @@ alias POWER_NORMAL="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set 
 alias POWER_MAX="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set performance"
 
 export PYENV_ROOT="$HOME/.pyenv"
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
