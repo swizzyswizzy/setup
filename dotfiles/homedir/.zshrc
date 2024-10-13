@@ -78,6 +78,7 @@ plugins=(git)
 
 zstyle :omz:plugins:ssh-agent identities marekzytko_key
 
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
