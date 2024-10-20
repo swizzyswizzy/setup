@@ -4,7 +4,6 @@
 */10 * * * * cp -r /home/marek/.config/i3status /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log
 */10 * * * * cp -r /home/marek/.config/i3block /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log
 */10 * * * * cp -r /home/marek/.config/i3block_scripts /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log
-*/10 * * * * cp -r /home/marek/.config/picom.conf /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log
 */10 * * * * cp -r /home/marek/.config/alacritty /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log
 
 */10 * * * * cp -r /home/marek/.config/htop /home/marek/git/setup/dotfiles/.config > /home/marek/log/log.log

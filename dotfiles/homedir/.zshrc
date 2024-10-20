@@ -109,8 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias config="cd ~/.config"
 
-alias os="cd ~/git/testOS/"
-alias firma="cd ~/Documents/firma"
 alias update="yay --noconfirm"
 alias wifi_restart="sudo systemctl restart iwd.service" 
 alias htb="cd ~/Documents/HackTheBox" 
@@ -127,3 +125,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+
+# emscripten
+export EMSDK_QUIET=1
+source ~/git/emsdk/emsdk_env.sh
