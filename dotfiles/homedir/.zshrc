@@ -71,12 +71,9 @@ ZSH_THEME="rgm"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git)
+plugins=(git ssh-agent)
 
-# not working for some reason xD
-#plugins=(git ssh-agent identities marekzytko_key)
-
-zstyle :omz:plugins:ssh-agent identities marekzytko_key
+zstyle :omz:plugins:ssh-agent agent-forwarding yes identities ~/.ssh/{swizzyswizzy,minecraft_servers}
 
 DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
@@ -120,6 +117,13 @@ alias POWER_ULTRA_LOW="sudo cpupower frequency-set -u 2GHz && powerprofilesctl s
 alias POWER_NORMAL="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set power-saver"
 alias POWER_MAX="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set performance"
 alias nc="ncat"
+alias vi="vim"
+
+# Add a terminal colors switch for production environments
+# TODO 
+# Add different paths for windows Alacritty
+alias PROD_COLOR="alacritty msg config \"$(cat ~/.config/alacritty/production_theme.toml)\""
+alias NORMAL_COLOR="alacritty msg config \"$(cat ~/.config/alacritty/default_theme.toml)\""
 
 export PYENV_ROOT="$HOME/.pyenv"
 # Install Ruby Gems to ~/gems

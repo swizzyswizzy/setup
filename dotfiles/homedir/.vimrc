@@ -5,6 +5,7 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
