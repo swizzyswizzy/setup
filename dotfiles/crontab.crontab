@@ -24,8 +24,6 @@
 
 */10 * * * * cp -r /etc/modprobe.d/ /home/marek/git/setup/ >> /home/marek/log/log.log
 
-&runatreboot,runonce 0 * * * * rm ~/.bash_history ~/.zsh_history ~/.python_history
-
 # Backup cron itself:
 
 */10 * * * * fcrontab -l > /home/marek/git/setup/dotfiles/crontab.crontab 
