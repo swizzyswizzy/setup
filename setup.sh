@@ -4,7 +4,7 @@
 SSH_KEY=~/.ssh/marekzytko_key
 
 # List of packages:
-packages=("git" "gimp" "keepass" "tmux" "zsh" "zsh-completions" "ripgrep" "rofi" "tldr" "falkon" "fcron" "openvpn" "alacritty" "btop" "flameshot" "powertop" "xautolock" "playerctl" "dex" "veracrypt" "libinput" "brightnessctl" "ffmpeg" "yubikey-manager-gui" "inetutils" "cpupower" "power-profiles-daemon" "python-gobject")
+packages=("git" "gimp" "keepass" "tmux" "zsh" "zsh-completions" "ripgrep" "rofi" "tldr" "falkon" "fcron" "openvpn" "alacritty" "btop" "flameshot" "powertop" "xautolock" "playerctl" "dex" "veracrypt" "libinput" "brightnessctl" "ffmpeg" "yubikey-manager-gui" "inetutils" "cpupower" "power-profiles-daemon" "python-gobject" "networkmanager")
 
 yay_packages=("mirage" "corefm" "oh-my-zsh-git" "betterlockscreen" "opera")
 
