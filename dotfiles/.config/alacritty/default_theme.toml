@@ -2,28 +2,28 @@
 # https://github.com/alacritty/alacritty/blob/v0.12.3/alacritty/src/config/color.rs
 
 [colors.primary]
-foreground = '#E1E5C2'
-background = '#0F1917'
+foreground = '#c5c8c6'
+background = '#1d1f21'
 
 [colors.normal]
-black = '#010101'
+black = '#1d1f21'
 red = '#cc6666'
 green = '#b5bd68'
 yellow = '#f0c674'
 blue = '#81a2be'
 magenta = '#b294bb'
 cyan = '#8abeb7'
-white = '#FFFFFF'
+white = '#c5c8c6'
 
 [colors.bright]
-black = '#010101'
+black = '#666666'
 red = '#d54e53'
 green = '#b9ca4a'
 yellow = '#e7c547'
 blue = '#7aa6da'
 magenta = '#c397d8'
 cyan = '#70c0b1'
-white = '#FFFFFF'
+white = '#eaeaea'
 
 [colors.dim]
 black = '#131415'
@@ -33,4 +33,4 @@ yellow = '#9e824c'
 blue = '#556a7d'
 magenta = '#75617b'
 cyan = '#5b7d78'
-white = '#FFFFFF'
+white = '#828482'

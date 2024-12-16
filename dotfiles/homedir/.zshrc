@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias config="cd ~/.config"
 
-alias update="yay --noconfirm"
+alias update="sudo pacman -Syyu"
 alias wifi_restart="sudo systemctl restart iwd.service" 
 alias htb="cd ~/Documents/HackTheBox" 
 alias ctf="cd ~/Documents/CTF" 

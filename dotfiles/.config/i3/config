@@ -12,6 +12,7 @@
 
 # Assign Workspaces:
 bindsym Mod1+Return exec alacritty
+bindsym Mod1+n exec alacritty -e vim ~/notes.txt
 
 default_border pixel 2
 default_floating_border pixel 2
