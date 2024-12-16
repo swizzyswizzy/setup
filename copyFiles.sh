@@ -1,0 +1,15 @@
+cp -r /home/marek/.config/i3 /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/i3status /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/i3block /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/i3block_scripts /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/alacritty /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/htop /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/rofi /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.config/betterlockscreen /home/marek/git/setup/dotfiles/.config >> /home/marek/log.log
+cp -r /home/marek/.zshrc /home/marek/git/setup/dotfiles/homedir >> /home/marek/log.log
+cp -r /home/marek/.tmux.conf /home/marek/git/setup/dotfiles/homedir >> /home/marek/log.log
+cp -r /home/marek/.vim/autoload /home/marek/git/setup/dotfiles/homedir >> /home/marek/log.log
+cp -r /home/marek/.vim/colors /home/marek/git/setup/dotfiles/homedir >> /home/marek/log.log
+cp -r /home/marek/.vimrc /home/marek/git/setup/dotfiles/homedir >> /home/marek/log.log
+cp -r /etc/X11/xorg.conf.d/ /home/marek/git/setup/dotfiles >> /home/marek/log.log
+cp -r /etc/modprobe.d/ /home/marek/git/setup/ >> /home/marek/log.log
