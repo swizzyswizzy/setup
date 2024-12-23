@@ -27,32 +27,32 @@ source zsh.sh
 # Install packages list:
 for package in ${packages[@]};
 do
-	echo -n "Installing ${package}..."
-	sudo pacman -Syy ${package} --noconfirm > /dev/null
-	if [ $? -eq 0 ];
-	then
-		echo -e "\e[42mSUCCESS\e[0m"
-	else
-		echo -e "\e[41mFAILED\e[0m"
-		${package}
-		
-	fi
+     echo -n "Installing ${package}..."
+     sudo pacman -Syy ${package} --noconfirm > /dev/null
+     if [ $? -eq 0 ];
+     then
+          echo -e "\e[42mSUCCESS\e[0m"
+     else
+          echo -e "\e[41mFAILED\e[0m"
+          ${package}
+          
+     fi
 done
 
 
 # Install packages list:
 for package in ${yay_packages[@]};
 do
-	echo -n "Installing ${package}..."
-	yay ${package} --noconfirm > /dev/null
-	if [ $? -eq 0 ];
-	then
-		echo -e "\e[42mSUCCESS\e[0m"
-	else
-		echo -e "\e[41mFAILED\e[0m"
-		${package}
-		
-	fi
+     echo -n "Installing ${package}..."
+     yay ${package} --noconfirm > /dev/null
+     if [ $? -eq 0 ];
+     then
+          echo -e "\e[42mSUCCESS\e[0m"
+     else
+          echo -e "\e[41mFAILED\e[0m"
+          ${package}
+          
+     fi
 done
 
 
@@ -63,7 +63,7 @@ eval $(ssh-agent) > /dev/null
 
 if [ $? -eq 0 ];
 then
-	echo -e "\e[42mSUCCESS\e[0m"
+     echo -e "\e[42mSUCCESS\e[0m"
 fi
 
 echo -n "generating SSH key..."
