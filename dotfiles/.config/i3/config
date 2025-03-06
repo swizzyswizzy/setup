@@ -11,7 +11,7 @@
 
 
 # Assign Workspaces:
-bindsym Mod1+Return exec alacritty
+bindsym Mod1+Return exec --no-startup-id "sh -c 'DIR=$(cat /tmp/vim_current_dir 2>/dev/null || xcwd 2>/dev/null || echo $HOME); [ -d '$DIR' ] && alacritty --working-directory=$DIR || alacritty'
 bindsym Mod1+n exec alacritty -e vim ~/notes.txt
 
 default_border pixel 2

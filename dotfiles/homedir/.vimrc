@@ -34,7 +34,7 @@ set undofile
 nnoremap <leader>pv :Ex<CR>
 
  "Find and replace phrase
-nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <leader>s :%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Better :retab -> replace indentation in file with tab=5spaces
 nnoremap <leader>pi :set expandtab<CR>:retab<CR>
@@ -43,7 +43,7 @@ nnoremap <leader>pi :set expandtab<CR>:retab<CR>
 nnoremap <leader>ff :FZF --reverse<CR> 
 
 " FuzzyFinder for content
-command! -bang -nargs=* FZCONTENT call fzf#vim#grep('grep -rnI '.shellescape(<q-args>), 0, <bang>0) --reverse
+command! -bang -nargs=* FZCONTENT call fzf#vim#grep('grep -rnI --exclude-dir={.next,.git,node_modules} '.shellescape(<q-args>), 0, <bang>0) --reverse
 nnoremap <leader>fc :FZCONTENT<CR> 
 
 " Harpwn bindings
@@ -75,6 +75,42 @@ set shiftwidth=5  " Number of spaces to use for each step of (auto)indent
 set expandtab     " Use spaces instead of tabs
 set autoindent    " Copy indent from current line when starting a new line
 
+" Current working directory preview at the bottom
+set laststatus=2
+set statusline=%F
+set statusline+=%=
+set statusline+=%{getcwd()}
+
 " Temporarilly disable parenthesis highlighting
 "let loaded_matchparen = 1 
 
+" share clipboard with the system
+set clipboard=unnamedplus
+
+" highlighting search results
+set hlsearch
+highlight Search ctermfg=white ctermbg=red
+nnoremap A :noh<CR>A
+nnoremap a :noh<CR>a
+nnoremap I :noh<CR>I
+nnoremap i :noh<CR>i
+
+" integrating Vim with i3
+"
+" I would like to open new console windows in the current Vim directory
+" for this to work, we need to write current directory to somewhere so the i3
+" can pick it up
+
+
+augroup UpdateCurrentDir
+  autocmd!
+  autocmd BufEnter * silent! !echo %:p:h > /tmp/vim_current_dir
+augroup END
+
+
+" Deleting temp file at the exit
+autocmd VimLeave * silent! !rm /tmp/vim_current_dir
+
+
+" Set auto current directory
+set autochdir
