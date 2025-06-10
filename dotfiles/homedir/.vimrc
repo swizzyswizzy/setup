@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'preservim/nerdcommenter'
+Plug 'rluba/jai.vim'
 
 call plug#end()
 
@@ -36,14 +37,14 @@ nnoremap <leader>pv :Ex<CR>
  "Find and replace phrase
 nnoremap <leader>s :%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>
 
-" Better :retab -> replace indentation in file with tab=5spaces
+" Better :retab -> replace indentation in file from tabs to spaces
 nnoremap <leader>pi :set expandtab<CR>:retab<CR>
 
 " FuzzyFinder for files
 nnoremap <leader>ff :FZF --reverse<CR> 
 
 " FuzzyFinder for content
-command! -bang -nargs=* FZCONTENT call fzf#vim#grep('grep -rnI --exclude-dir={.next,.git,node_modules} '.shellescape(<q-args>), 0, <bang>0) --reverse
+command! -bang -nargs=* FZCONTENT call fzf#vim#grep('grep -rnI --exclude-dir={.next,.git,node_modules,env} '.shellescape(<q-args>), 0, <bang>0) --reverse
 nnoremap <leader>fc :FZCONTENT<CR> 
 
 " Harpwn bindings
@@ -69,9 +70,9 @@ set scrolloff=2
 
 syntax enable
 set background=dark
-set tabstop=5     " Number of spaces that a <Tab> in the file counts for
-set softtabstop=5 " Number of spaces that a <Tab> is when editing
-set shiftwidth=5  " Number of spaces to use for each step of (auto)indent
+set tabstop=8     " Number of spaces that a <Tab> in the file counts for
+set softtabstop=8 " Number of spaces that a <Tab> is when editing
+set shiftwidth=8  " Number of spaces to use for each step of (auto)indent
 set expandtab     " Use spaces instead of tabs
 set autoindent    " Copy indent from current line when starting a new line
 
