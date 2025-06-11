@@ -124,7 +124,10 @@ alias rdp="rdesktop -z"
 # TODO 
 # Add different paths for windows Alacritty
 alias PROD_COLOR="alacritty msg config \"$(cat ~/.config/alacritty/production_theme.toml)\""
+alias REMOTE_COLOR="alacritty msg config \"$(cat ~/.config/alacritty/remote_theme.toml)\""
 alias NORMAL_COLOR="alacritty msg config \"$(cat ~/.config/alacritty/default_theme.toml)\""
+
+alias ssh='REMOTE_COLOR && ssh'
 
 export PYENV_ROOT="$HOME/.pyenv"
 # Install Ruby Gems to ~/gems
