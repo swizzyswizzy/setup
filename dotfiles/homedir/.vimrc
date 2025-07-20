@@ -11,15 +11,20 @@ Plug 'rluba/jai.vim'
 
 call plug#end()
 
-
-
+"
+" Automatically set working directory to the one opened with 'vim .'
+" This is a workaround for the problem, when I open vim and until I go to any
+" file, it thinks I am in the parent directory...
+"
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | execute 'cd '.argv()[0] | endif
 
 
 
 " Highlighint all leading Tabs
 highlight Tab ctermbg=LightBlue guibg=LightBlue
 autocmd BufEnter * call matchadd('Tab', '^\t\+', -1)
-autocmd BufLeave * call clearmatches()
+autocmd InsertLeave * call clearmatches()
+" autocmd BufLeave * call clearmatches()
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
@@ -115,3 +120,49 @@ autocmd VimLeave * silent! !rm /tmp/vim_current_dir
 
 " Set auto current directory
 set autochdir
+
+
+" Define highlight group for search term
+highlight SearchHighlight ctermfg=white ctermbg=red guifg=white guibg=red
+
+" Custom search and replace function
+function! CustomSearchReplace()
+    " Prompt for search term
+    let l:search = input('Enter search term: ')
+    if empty(l:search)
+        call clearmatches()
+        echo "Search cancelled"
+        return
+    endif
+    " Highlight all occurences of the search term
+    try
+        call matchadd('SearchHighlight', '\V' . escape(l:search, '\'))
+        redraw
+    catch
+        echoerr "Error highlighting search term: " . v:exception
+        call clearmatches()
+        return
+    endtry
+    
+    " Prompt for replace term
+    let l:replace = input('Enter replace term: ')
+    if empty(l:replace) && l:replace !=# '0'
+        call clearmatches()
+        echo "Replace cancelled"
+        return
+    endif
+    
+    " Perform the search and replace
+    try
+        execute '%s/' . escape(l:search, '/\') . '/' . escape(l:replace, '/\') . '/g'
+"        echo "Replaced all occurrences of '" . l:search . "' with '" . l:replace . "'"
+    catch
+        echoerr "Error during replacement: " . v:exception
+    endtry
+"    call clearmatches()
+endfunction
+
+" Map <Space>s to the search and replace function in normal mode
+nnoremap <Space>s :call CustomSearchReplace()<CR>
+
+

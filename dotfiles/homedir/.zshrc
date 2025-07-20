@@ -118,7 +118,6 @@ alias POWER_NORMAL="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set 
 alias POWER_MAX="sudo cpupower frequency-set -u 6GHz && powerprofilesctl set performance"
 alias nc="ncat"
 alias vi="vim"
-alias rdp="rdesktop -z"
 
 # Add a terminal colors switch for production environments
 # TODO 
