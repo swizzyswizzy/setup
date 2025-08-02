@@ -154,7 +154,7 @@ function! CustomSearchReplace()
     
     " Perform the search and replace
     try
-        execute '%s/' . escape(l:search, '/\') . '/' . escape(l:replace, '/\') . '/g'
+        execute '%s/' . escape(l:search, '\\/.*$^~[]') . '/' . escape(l:replace, '\\/.*$^~[]') . '/g'
 "        echo "Replaced all occurrences of '" . l:search . "' with '" . l:replace . "'"
     catch
         echoerr "Error during replacement: " . v:exception
